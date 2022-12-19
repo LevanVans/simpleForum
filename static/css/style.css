@@ -1,0 +1,163 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+
+    background-color: rgb(229, 238, 238);
+
+}
+
+/*   Css for Navigation  */
+nav {
+
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    
+}
+
+nav img {
+    width: 250px;
+    height: 110px;
+}
+
+.search {
+    margin-top: 20px;
+    height: 30px;
+}
+
+
+.panel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+
+/*   CSS from Section    */
+
+section{
+
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+
+}
+
+/*  CSS for Topics   */
+.topics{
+
+    margin-left: 10px;
+
+}
+
+.topics a{
+    text-decoration: none;
+    width: 100%;
+  
+    
+}
+.topics p{
+
+    padding: 10px;
+    margin-bottom: 2px;
+    font-size: 20px;
+    background-color: rgb(245, 150, 26);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.topics p:hover{
+
+    padding-left: 15px;
+
+}
+
+
+/* CSS for POSTS*/
+
+
+.posts{
+    margin-left: 10px;
+}
+
+
+
+.post{
+
+    background-color: hsl(24, 5%, 78%);
+    padding: 20px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+.topic_tags{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.tag{
+    border: 1px solid black;
+    padding: 5px;
+    margin-left: 10px;
+    color: white;
+    border-radius: 3px;
+}
+
+
+
+
+/* CSS form Post's Form*/
+
+
+.post_form  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+
+}
+
+.post_form div{
+
+    margin: 20px;
+
+}
+
+
+/* Each post div */
+
+
+.each_post {
+
+    border: 1px solid black;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.each_post_body{
+    margin-left: 10px;
+}
+
+.add_comment{
+
+    resize: none;
+    width: 100%;
+    padding: 10px;
+    height: 55px;
+
+}

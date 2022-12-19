@@ -1,0 +1,58 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Forum</title>
+</head>
+<body>  
+    {% if messages %}
+    {% for message in messages %}
+    <p style="width: 100%; background-color: burlywood; text-align: center;">{{message}}</p>
+    
+    {% endfor %}
+{% endif %}
+    
+    <!--  Navigation  -->
+    <nav>
+
+        {%include 'navbar.html' %}
+
+
+
+    </nav>
+    <hr>
+    <br>
+
+    <!--  Section for content -->
+
+    <section>
+    {% block content %}
+
+
+
+
+
+    {%endblock%}
+    </section>
+
+
+
+    <!-- Footer  -->
+
+    <footer>
+
+
+        
+
+
+
+    </footer>
+
+
+
+</body>
+</html>

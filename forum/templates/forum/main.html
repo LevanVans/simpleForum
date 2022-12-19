@@ -1,0 +1,162 @@
+
+{%extends 'base.html' %}
+
+{% block content %}
+
+<div class="topics">
+    <a href="{% url 'home' %}"><p>Main Page</p></a>
+    
+    {%for topic in topics%}
+
+    <a href="{% url 'home' %}?q={{topic.id}}"><p>{{topic.name}}</p></a>
+    
+    {%endfor%}
+
+
+
+
+</div>
+
+{%if each_post %}
+
+<div class="posts">
+
+   
+    <div class="post">
+        <div class="topic_tags">
+        <a style="text-decoration: none; font-size: larger; font-weight: bold; color: #ff5e00;" href="{% url 'home' %}?q={{post.topic.id}}"><p>{{post.topic.name}}</p></a>
+        {%for tag in post.tags.all%}
+        <p class="tag">{{tag}}</p>
+        {%endfor%}
+        </div>
+        <br>
+        <p><b> User: </b> {{post.user}} &nbsp; <b> Created : </b> {{post.created}} &nbsp; {%if post.created != post.updated %}<b> Updated : </b>{{post.updated}} {%endif%}   </p>
+        <br>
+        <a href="{%url 'post-page' post.id %}"> <p style="font-size: 25px">{{post.name}}</p></a>
+        <br>
+     
+        <div style="border: 1px solid black; border-radius: 10px; padding: 10px;">
+            {{post.body}}
+        </div>
+        {%if request.user == post.user%}
+        <br>
+        <div>
+        <a href="{% url 'edit-post'  post.id %}">Edit</a> <a href="{% url 'delete-post' post.id%}">Delete</a> 
+        </div>
+        {%endif%}
+    </div>
+
+
+
+    <div>
+        
+        {%for comment in comments%}
+
+        <div class="each_post">
+
+            <p><b> User: </b> {{comment.user}} &nbsp; <b> Created : </b> {{comment.created}} &nbsp; {%if comment.created != comment.updated %}<b> Updated : </b>{{comment.updated}} {%endif%}   </p>
+            <br>
+            <div class="each_post_body">
+
+                {{comment.body}}
+
+
+                {%if request.user == comment.user%}
+
+                <br>
+                <br>
+                <div>
+
+                <a href="{% url 'edit-comment' post.id comment.id  %}">Edit</a>  <a href="{% url 'delete-comment' comment.id%}">Delete</a>
+
+                </div>
+                {%endif%}
+            
+            </div>  
+            {%if request.user == post.user%}
+            <br>
+            <div>
+
+                <a href="{% url 'edit-post'  post.id %}">Edit</a> <a href="{% url 'delete-post' post.id%}">Delete</a> 
+            </div>
+            {%endif%}
+        </div>
+        <br>
+
+
+        {%endfor%}
+
+
+        <div style="position: sticky; bottom: 10px; width: 100%; border-radius: 10px;">
+
+            <form action="" method="POST" id="comment_form">
+
+                {%csrf_token%}
+         
+                {{form.as_div}}
+            
+
+                <div>
+                    <input type="Submit" value="Comment" style="padding: 5px; padding: 10px; background-color: rgb(31, 255, 31); font-weight: bold;"  >
+                </div>
+            </form>
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+{%else%}
+<div class="posts">
+
+    <h1>Posts :   {{posts.count}}</h1>
+    <br>
+    {%for post in posts%}
+   
+    <div class="post">
+        <div class="topic_tags">
+        <a style="text-decoration: none; font-size: larger; font-weight: bold; color: #ff5e00;" href="{% url 'home' %}?q={{post.topic.id}}"><p>{{post.topic.name}}</p></a>
+        {%for tag in post.tags.all%}
+        <p class="tag">{{tag}}</p>
+        {%endfor%}
+        </div>
+        <br>
+        <p><b> User: </b> {{post.user}} &nbsp; <b> Created : </b> {{post.created}} &nbsp; {%if post.created != post.updated %}<b> Updated : </b>{{post.updated}} {%endif%}   </p>
+        <br>
+        <a href="{%url 'post-page' post.id %}"> <p style="font-size: 25px">{{post.name}}</p></a>
+        <br>
+     
+        <div style="border: 1px solid black; border-radius: 10px; padding: 10px;">
+            {{post.body}}
+        </div>
+        {%if request.user == post.user%}
+        <br>
+        <div>
+        <a href="{% url 'edit-post'  post.id %}">Edit</a> <a href="{% url 'delete-post' post.id%}">Delete</a> 
+        </div>
+        {%endif%}
+    </div>
+    {%endfor%}
+
+
+
+</div>
+
+
+
+{%endif%}
+
+
+
+{%endblock%}

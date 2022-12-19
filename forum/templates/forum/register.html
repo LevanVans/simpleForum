@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+
+
+{%block content%}
+
+
+
+<form action="" method="POST"  style="display: flex; flex-direction: column; padding: 20px;">
+
+
+    {%csrf_token%}
+    <div  style="display: flex;flex-direction: row;">
+    <label style="margin-right: 10px;" for="id_username">Username  </label>
+    <input type="text" name="username" id="id_username">
+    </div>
+
+    <br>
+
+    <div  style="display: flex;flex-direction: row;">
+    <label  style="margin-right: 10px" for="id_password1">Password</label>
+    <input type="password" name="password1" id="id_password1">
+    </div>
+
+    <br>
+
+    <div  style="display: flex;flex-direction: row;">
+    <label  style="margin-right: 10px" for="id_password2">Confirm Password</label>
+    <input type="password" name="password2" id="id_password2">
+    </div>
+
+    <br>
+
+
+    <input type="Submit"  value="Register" style="width: 100px;">
+</form>
+
+
+ 
+
+
+{%endblock%}

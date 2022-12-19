@@ -1,0 +1,46 @@
+
+{%load static%}
+
+
+<div>
+    
+<a href="/"><img src="{% static 'images/forum.png'%}" alt=""></a>
+    
+
+</div>
+
+<div  class="panel" >
+
+    <div>
+    <form action="{%url 'home'%}" >
+            
+        <input type="text" name="search" placeholder="Search"  class="search"  >
+
+    </form>
+</div>
+
+<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; width:250px;">
+    {%if user.is_authenticated %}
+    <p>@{{ request.user.username }}</p>
+    <a style="display: block; text-decoration: none; font-size: 20px; " href="{% url 'create-post' %}">Create Post</a>
+    <a  style="display: block; text-decoration: none; color: red;" href="{%url 'logout'%}"> <b>Logout!</b></a>
+
+
+    {%else%}
+    <form action="{%url 'login' %}" method="POST" >
+        {%csrf_token%}
+        <input type="text" name="username" placeholder="Username">
+        <br>
+        <input type="password" name="password" placeholder="Password">
+
+        <input type="Submit" value="Login">
+        <a style="display: block;" href="{% url 'register' %}">Register</a>
+
+    </form>
+
+    {%endif%}
+    
+</div>
+
+
+</div>

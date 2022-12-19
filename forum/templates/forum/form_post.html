@@ -1,0 +1,35 @@
+{%extends 'base.html'%} 
+
+
+{%block content%}
+
+
+<form action="" method="POST" class="post_form">
+
+    {%csrf_token%}
+
+    {{form.as_div}}
+
+    <br>
+
+    <input type="submit"  value="Create Post" style="width: 100px; align-self: center;">
+
+
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+{%endblock%}
