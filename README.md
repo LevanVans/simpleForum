@@ -10,6 +10,8 @@ Users can Add Tags to their Post (Where Is used ManyToMany Relationship)
 
 Authenticated users can write Comments for any posts . Edit and delete (Just only their comments )
 
+SuperUsers have Admin label 
+
 Users can use Search bar 
 
 You can categorize posts by Topics
