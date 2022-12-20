@@ -61,23 +61,17 @@
                 {{comment.body}}
 
 
-                {%if request.user == comment.user%}
-
-                <br>
-                <br>
-                <div>
-
-                <a href="{% url 'edit-comment' post.id comment.id  %}">Edit</a>  <a href="{% url 'delete-comment' comment.id%}">Delete</a>
-
-                </div>
-                {%endif%}
+              
             
             </div>  
-            {%if request.user == post.user%}
+            {%if request.user == comment.user%}
+
+            <br>
             <br>
             <div>
 
-                <a href="{% url 'edit-post'  post.id %}">Edit</a> <a href="{% url 'delete-post' post.id%}">Delete</a> 
+            <a href="{% url 'edit-comment' post.id comment.id  %}">Edit</a>  <a href="{% url 'delete-comment' comment.id%}">Delete</a>
+
             </div>
             {%endif%}
         </div>

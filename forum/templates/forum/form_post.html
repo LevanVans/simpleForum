@@ -11,12 +11,11 @@
     {{form.as_div}}
 
     <br>
-
+    {%if 'edit' in request.path %}
+    <input type="submit"  value="Edit Post" style="width: 100px; align-self: center;">
+    {%else%}
     <input type="submit"  value="Create Post" style="width: 100px; align-self: center;">
-
-
-
-
+    {%endif%}
 
 
 
