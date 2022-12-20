@@ -18,7 +18,10 @@ Posts and Comments are sorted by update date and creation date
 
 Updated status on posts and comments will be visible if update and create DateTime will be different ()
 
-''' Not Authenticated users can't Visit edit , delete or add urls . Authenticated users can't edit, delete other user's posts they will be redirected to Home Page
+'''
+Not Authenticated users can't Visit edit , delete or add urls . Authenticated users can't edit, delete other user's posts they will be redirected to Home Page
+
+For non Authenticated users will be visible Login and Registration Form , For authenticated Users will be visible Create post and Logout buttons  
 
 ModelForms and their Validation . During creating Post or Comment "user" field will be filled automatically by active user data
 username will be saved Lowercased in user Table .
