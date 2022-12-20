@@ -19,9 +19,9 @@
     </form>
 </div>
 
-<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; width:250px;">
+<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; width:260px;">
     {%if user.is_authenticated %}
-    <p>@{{ request.user.username }}</p>
+    <p> {%if request.user.is_superuser%}<span style="color:red;">Admin</span> @ {%endif%} {{ request.user.username }}</p>
     <a style="display: block; text-decoration: none; font-size: 20px; " href="{% url 'create-post' %}">Create Post</a>
     <a  style="display: block; text-decoration: none; color: red;" href="{%url 'logout'%}"> <b>Logout!</b></a>
 
