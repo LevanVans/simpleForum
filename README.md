@@ -30,6 +30,8 @@ Templates and Templates inheritence (extend, include)
 
 Static Files
 
+Messages.error will be displayed if user's password will be incorrect 
+
 '''
 
 P.S. My project does not contains too much Front-end skills , because I am concerned on Back end
