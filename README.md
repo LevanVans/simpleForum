@@ -2,7 +2,7 @@ Welcome !
 
 it is a practicing forum style project with user authentication
 
-In my project users can register user ,login (If not authenticated ) and logout (If is authenticated )
+In my project users can register and login (If not authenticated ) and logout (If is authenticated )
 
 Authenticated users can add Posts . Edit and delete (Just only their posts)
 
